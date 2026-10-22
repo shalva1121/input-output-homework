@@ -1,0 +1,13 @@
+<div class="child">
+  <h3>Child Component</h3>
+
+  <p><strong>Text from parent:</strong> {{ text }}</p>
+
+  <p><strong>Question:</strong> {{ question }}</p>
+  <button type="button" (click)="onReply()">Reply</button>
+
+  <hr />
+
+  <p *ngIf="name"><strong>Name from parent:</strong> {{ name }}</p>
+  <button type="button" (click)="onGreet()" [disabled]="!name">Send Greeting</button>
+</div>

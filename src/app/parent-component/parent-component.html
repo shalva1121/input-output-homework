@@ -1,0 +1,23 @@
+<div class="parent">
+  <h2>Parent Component</h2>
+
+  <p>{{ parentText }}</p>
+
+  <label>
+    Enter your name:
+    <input type="text" [(ngModel)]="userName" placeholder="Name" />
+  </label>
+
+  <app-child-component
+    [text]="parentText"
+    [question]="question"
+    [name]="userName"
+    (replied)="onReply($event)"
+    (greeted)="onGreeting($event)"
+  ></app-child-component>
+
+  <div class="results">
+    <p *ngIf="replyFromChild"><strong>Reply from child:</strong> {{ replyFromChild }}</p>
+    <p *ngIf="greetingFromChild"><strong>Greeting from child:</strong> {{ greetingFromChild }}</p>
+  </div>
+</div>
